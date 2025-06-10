@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# --- AUTOSTART SCRIPT FOR BERSERKER OS ---
+
+FLAG_FILE="$HOME/.config/openbox/.menu_generated"
+MENU_FILE="$HOME/.config/openbox/menu.xml"
+
+# Generate Openbox menu on the first run only
+if [ ! -f "$FLAG_FILE" ]; then
+    # Wait a couple of seconds for the session to be fully initialized
+    sleep 2
+
+    # Generate a clean menu, overwriting any previous one
+    /usr/bin/mmaker -f --no-legacy --no-debian OpenBox3 >"$MENU_FILE"
+
+    # Check if MenuMaker ran successfully
+    if [ $? -eq 0 ]; then
+        # Create the flag file to prevent this from running again
+        touch "$FLAG_FILE"
+        # CRITICAL: Tell the running Openbox instance to load the new menu
+        openbox --reconfigure
+    fi
+fi
+
+# Start the panel
+tint2 &
+
+# Start the wallpaper manager
+feh --bg-fill "/usr/share/backgrounds/arch.png" &
