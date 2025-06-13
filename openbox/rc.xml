@@ -49,18 +49,18 @@
 </placement>
 
 <theme>
-  <name>Clearlooks</name>
+  <name>Onyx</name>
   <titleLayout>NLIMC</titleLayout>
   <!--
-      available characters are NDSLIMC, each can occur at most once.
-      N: window icon
-      L: window label (AKA title).
-      I: iconify
-      M: maximize
-      C: close
-      S: shade (roll up/down)
-      D: omnipresent (on all desktops).
-  -->
+    available characters are NDSLIMC, each can occur at most once.
+    N: window icon
+    L: window label (AKA title).
+    I: iconify
+    M: maximize
+    C: close
+    S: shade (roll up/down)
+    D: omnipresent (on all desktops).
+-->
   <keepBorder>yes</keepBorder>
   <animateIconify>yes</animateIconify>
   <font place="ActiveWindow">
@@ -128,7 +128,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-  <number>4</number>
+  <number>9</number>
   <firstdesk>1</firstdesk>
   <names>
     <!-- set names up here if you want to, like this:
@@ -150,10 +150,10 @@
   <popupFixedPosition>
     <!-- these are used if popupPosition is set to 'Fixed' -->
 
-    <x>10</x>
+    <x>20</x>
     <!-- positive number for distance from left edge, negative number for
          distance from right edge, or 'Center' -->
-    <y>10</y>
+    <y>20</y>
     <!-- positive number for distance from top edge, negative number for
          distance from bottom edge, or 'Center' -->
   </popupFixedPosition>
@@ -198,6 +198,11 @@
         <command>rofi -show drun</command>
       </action>
     </keybind>
+    <keybind key="A-Return">
+      <action name="Execute">
+        <command>kitty</command>
+      </action>
+    </keybind>
   <!-- custom keybinds - ends -->
 
   <!-- Keybindings for desktop switching -->
@@ -225,16 +230,16 @@
   <keybind key="S-A-Down">
     <action name="SendToDesktop"><to>down</to><wrap>no</wrap></action>
   </keybind>
-  <keybind key="W-F1">
+  <keybind key="W-1">
     <action name="GoToDesktop"><to>1</to></action>
   </keybind>
-  <keybind key="W-F2">
+  <keybind key="W-2">
     <action name="GoToDesktop"><to>2</to></action>
   </keybind>
-  <keybind key="W-F3">
+  <keybind key="W-3">
     <action name="GoToDesktop"><to>3</to></action>
   </keybind>
-  <keybind key="W-F4">
+  <keybind key="W-4">
     <action name="GoToDesktop"><to>4</to></action>
   </keybind>
   <keybind key="W-d">
@@ -242,7 +247,7 @@
   </keybind>
 
   <!-- Keybindings for windows -->
-  <keybind key="A-F4">
+  <keybind key="W-q">
     <action name="Close"/>
   </keybind>
   <keybind key="A-Escape">
