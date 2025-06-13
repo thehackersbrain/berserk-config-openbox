@@ -19,7 +19,7 @@ if [ ! -f "$FLAG_FILE" ]; then
 fi
 
 # Start the panel
-tint2 &
+# tint2 &
 
 # Start the wallpaper manager
 (while true; do
@@ -29,3 +29,6 @@ done) &
 # feh --bg-fill "/usr/share/backgrounds/arch.png" &
 
 /usr/bin/spice-vdagent &
+
+## start polybar
+~/.config/polybar/launch.sh &
