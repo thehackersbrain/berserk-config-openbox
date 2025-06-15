@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Openbox
+Name=BerserkOpenbox
 Comment=Log in using the Openbox window manager (without a session manager)
 Exec=dbus-launch /usr/bin/openbox-session
 TryExec=/usr/bin/openbox-session
